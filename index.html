@@ -7,18 +7,22 @@
 
   <head>
     <meta charset="utf-8" />
-    <title>ATC-Hackerthon</title>
-    <meta name="description" content="" />
+    <title>Backend Rookie Hackathon</title>
+    <meta name="description" content="ATCollabo x Codepresso" />
     <meta name="author" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Backend Rookie Hackathon " />
+    <meta property="og:image" content="/images/thumbnail-meta.png" />
+    <meta property="og:description" content="ATCollabo x Codepresso" />
+    <meta property="og:url" content="https://hackathon.atcollabo.com" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/vendor.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
-
     <script src="js/globalConfig.js"></script>
-
-    <!-- <script src="js/modernizr.js"></script> -->
     <script src="js/pace.min.js"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -53,6 +57,35 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://cdn.pagesense.io/js/827406808/d02db9ac747243fa9c1da067167f3caa.js"></script>
+
+    <script type="text/javascript">
+      (function (w, s) {
+        var e = document.createElement("script");
+        e.type = "text/javascript";
+        e.async = true;
+        e.src =
+          "https://cdn.pagesense.io/js/827406808/d02db9ac747243fa9c1da067167f3caa.js";
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(e, x);
+      })(window, "script");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-FL3M92FY4W"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-FL3M92FY4W");
+    </script>
   </head>
 
   <body id="top">
@@ -75,30 +108,41 @@
             </li>
             <li>
               <a class="smoothscroll" href="index.html#about" title="about"
-                >1. About us/ Giới thiệu</a
+                >About us/ Giới thiệu</a
               >
             </li>
             <li>
               <a
                 class="smoothscroll"
-                href="index.html#services"
-                title="services"
-                >2. Timeline/ Lịch trình</a
+                href="index.html#instructors"
+                title="instructors"
+                >Instructors/ Hội đồng chuyên môn</a
               >
             </li>
             <li>
-              <a class="smoothscroll" href="index.html#works" title="works"
-                >3. Awards/ Giải thưởng</a
+              <a
+                class="smoothscroll"
+                href="index.html#timeline"
+                title="timeline"
+                >Timeline/ Lịch trình</a
               >
             </li>
             <li>
-              <a class="smoothscroll" href="index.html#clients" title="clients"
-                >4. News/ Tin tức</a
+              <a class="smoothscroll" href="index.html#awards" title="awards"
+                >Awards/ Giải thưởng</a
               >
             </li>
             <li>
-              <a class="smoothscroll" href="index.html#contact" title="contact"
-                >5. Register/ Đăng ký</a
+              <a class="smoothscroll" href="index.html#news" title="news"
+                >News/ Tin tức</a
+              >
+            </li>
+            <li>
+              <a
+                class="smoothscroll"
+                href="index.html#registerform"
+                title="register"
+                >Register/ Đăng ký</a
               >
             </li>
           </ul>
@@ -106,14 +150,14 @@
           <ul class="header-nav__social">
             <li>
               <a
-                href="https://www.facebook.com/ATCollabotechnologyschool"
+                href="https://www.facebook.com/ATCollaboAcademy"
                 target="_blank"
                 ><i class="fa fa-facebook"></i
               ></a>
             </li>
             <li>
               <a
-                href="https://www.youtube.com/@ATCollaboTechnologySchool"
+                href="https://www.youtube.com/@ATCollaboAcademy"
                 target="_blank"
               >
                 <i class="fa fa-youtube"></i
@@ -121,7 +165,7 @@
             </li>
             <li>
               <a
-                href=" https://www.linkedin.com/company/98254227/admin/feed/posts/"
+                href="https://www.linkedin.com/company/atcollabo"
                 target="_blank"
                 ><i class="fa fa-linkedin"></i
               ></a>
@@ -134,59 +178,111 @@
         <span class="header-menu-icon"></span>
       </a>
     </header>
-    <section
-      id="home"
-      class="s-home target-section"
-      data-parallax="scroll"
-      background-position:
-      center
-      center;
-    >
+    <section id="home" class="s-home target-section" data-parallax="scroll">
       <div class="home-content">
         <div class="row-header home-content__main">
           <div class="home-content-layout">
             <div class="home-content__buttons">
-              <a href="index.html#contact" class="smoothscroll btn btn--stroke">
-                <span class="btn-header">Register</span>
-              </a>
-              <a href="index.html#about" class="smoothscroll btn btn--stroke">
+              <button
+                onclick="openSearchPopup()"
+                type="button"
+                class="btn btn-primary btn--stroke"
+                data-toggle="modal"
+                data-target="#searchPopup"
+              ><span class="btn-header">Attendee List</span>
+               <!-- <span class="btn-header-register">Attendee List</span> -->
+              </button>
+              <div
+                class="modal fade"
+                id="searchPopup"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div
+                    style="background-color: #0A4E80 !important;border: 1px solid #0A4E80 ;
+                    border-radius: 15px;"
+                    class="modal-content"
+                  >
+                    <div class="modal-header">
+                      <h2
+                        style="align-self: center; color: #66FFF2;"
+                        class="modal-title"
+                        id="exampleModalLabel"
+                      >
+                      TRA CỨU THÔNG TIN
+                      </h2>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span
+                          style="font-size: 2.5rem !important; color: #FFA17A"
+                          aria-hidden="true"
+                          >&times;</span
+                        >
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <input
+                        class="search-input"
+                        type="text"
+                        id="emailInput"
+                        placeholder=" Nhập SDT/Email đăng ký để tìm kiếm..."
+                      />
+                      <div
+                        id="searchButtonContainer"
+                        style="
+                          display: flex;
+                          justify-content: center;
+                          margin-bottom: 10px;
+                          align-items: center;
+                          
+                        "
+                      >
+                        <button style="background-color: #69A49E; border-radius: 20px; border: #0A4E80;"  onclick="searchByEmail()">
+                          <i style="color: #6BF6FF;" class="fa fa-search fa-2x" aria-hidden="true"></i>
+                        </button>
+                      </div>
+
+                      <div id="searchResults"></div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="index.html#about"
+                class="smoothscroll btn btn--stroke btn-about"
+              >
                 <span class="btn-header">More About Us</span>
               </a>
             </div>
           </div>
         </div>
-
-        <div class="home-content__scroll">
-          <a href="index.html#about" class="scroll-link smoothscroll">
-            <span>Scroll Down</span>
-          </a>
-        </div>
-        <div class="home-content__line"></div>
       </div>
       <ul class="home-social">
         <li>
-          <a
-            href="https://www.facebook.com/ATCollabotechnologyschool"
-            target="_blank"
+          <a href="https://www.facebook.com/ATCollaboAcademy" target="_blank"
             ><i class="fa fa-facebook"></i
           ></a>
         </li>
         <li>
-          <a
-            href="https://www.youtube.com/@ATCollaboTechnologySchool"
-            target="_blank"
+          <a href="https://www.youtube.com/@ATCollaboAcademy" target="_blank"
             ><i class="fa fa-youtube"></i
           ></a>
         </li>
         <li>
-          <a
-            href=" https://www.linkedin.com/company/98254227/admin/feed/posts/"
-            target="_blank"
+          <a href="https://www.linkedin.com/company/atcollabo" target="_blank"
             ><i class="fa fa-linkedin"></i
           ></a>
         </li>
       </ul>
     </section>
+
     <section
       id="about"
       class="s-about"
@@ -202,34 +298,28 @@
           data-aos="fade-up"
         >
           <div class="col-block stats__col">
-            <div id="register" class="stats__count">
-              <span id="days"></span>
-            </div>
-            <h5 style="color: #67a7a3">Days</h5>
+            <div id="register" class="stats__count"></div>
+            <h5 style="color: #67a7a3">Register</h5>
           </div>
           <div class="col-block stats__col">
-            <div id="online" class="stats__count"><span id="hours"></span></div>
-            <h5 style="color: #67a7a3">Hours</h5>
+            <div id="online" class="stats__count"></div>
+            <h5 style="color: #67a7a3">Round 1</h5>
           </div>
           <div class="col-block stats__col">
-            <div id="offline" class="stats__count">
-              <span id="minutes"></span>
-            </div>
-            <h5 style="color: #67a7a3">Minutes</h5>
+            <div id="offline" class="stats__count"></div>
+            <h5 style="color: #67a7a3">Round 2</h5>
           </div>
           <div class="col-block stats__col">
-            <div id="hackathon" class="stats__count">
-              <span id="seconds"></span>
-            </div>
-            <h5 style="color: #67a7a3">Second</h5>
+            <div id="hackathon" class="stats__count"></div>
+            <h5 style="color: #67a7a3">Bootcamp</h5>
           </div>
         </div>
         <div class="col-full">
           <h3 class="subhead subhead--dark">About us</h3>
-          <h1 class="display-2">Giới Thiệu:</h1>
+          <h1 class="display-2">Giới Thiệu</h1>
           <img
             class="line_bar"
-            style="width: fit-content; height: 20px"
+            style="height: 20px"
             src="images/line1.png"
             alt=""
           />
@@ -246,7 +336,7 @@
                 Cuộc thi BACK-END ROOKIE HACKATHON là gì?
               </p>
 
-              <p class="about-content2"  style="color: #67a7a3">
+              <p class="about-content2" style="color: #67a7a3">
                 BACK-END ROOKIE HACKATHON là cuộc thi với mục tiêu tìm kiếm lập
                 trình viên Back-end tài năng cho cơ hội làm việc tại công ty
                 Công nghệ Quốc tế. Đây cũng là dịp để các bạn học sinh/ sinh
@@ -259,7 +349,20 @@
                 Ban tổ chức cuộc thi BACK-END ROOKIE HACKATHON là ai?
               </p>
               <p class="about-content2" style="color: #67a7a3">
-                Cuộc thi được tổ chức bởi ATCollabo và Code.presso…
+                ATCollabo hợp tác với Code.presso tổ chức cuộc thi Backend
+                Rookie Hackathon. <br />
+                Code.presso là đơn vị hàng đầu trong lĩnh vực đào tạo nhân lực
+                Công nghệ thông tin cho gần 50 Tập đoàn Công nghệ, các trường
+                Đại học, và các tổ chức chính phủ tại Hàn Quốc. Với đội ngũ
+                những người đứng đầu là những giảng viên có trình độ cao và kinh
+                nghiệm dày dặn, hiện đang là giảng viên tại top 3 (SKY) trường
+                đại học danh tiếng tại Hàn, Code.presso đã đào tạo gần 20.000 kỹ
+                sư công nghệ tốt nghiệp và hiện đang là các kỹ sư cấp cao được
+                đánh giá năng lực tốt tại các doanh nghiệp lớn trong và ngoài
+                nước như Samsung, Hyundai, Vecto... Code.presso cũng là đối tác
+                chiến lược của các Bộ ngành như Bộ Việc làm và Lao động, Bộ Kinh
+                tế - Tài chính... trong việc nâng cao kỹ năng Công nghệ thông
+                tin cho các cán bộ và viên chức. <br />
               </p>
             </div>
           </div>
@@ -283,10 +386,41 @@
                 <h5>Happy Clients</h5>
             </div>
         </div> -->
-      <div class="about__line"></div>
+    </section>
+    <section id="instructors" class="s-mentors">
+      <div class="section-mentor" data-aos="fade-up">
+        <div class="col-full">
+          <h3 class="subhead-mentors">Instructors and Judges team</h3>
+          <h1 class="display-2-mentors">HỘI ĐỒNG CHUYÊN MÔN</h1>
+          <img
+            class="line_bar"
+            style="height: 20px"
+            src="images/line1.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="w3-content w3-section"
+        style="max-width: fit-content; display: flex; margin: 0 auto"
+      >
+        <img class="mentor-desktop" src="/images/mentor.svg" alt="" />
+        <div class="mentor-mobile">
+          <div class="mySlides">
+            <img src="/images/800x500.jpg" style="width: 100%" />
+          </div>
+
+          <div class="mySlides">
+            <img src="/images/800x500-2.jpg" style="width: 100%" />
+          </div>
+          <div class="mySlides">
+            <img src="/images/800x500-1.jpg" style="width: 100%" />
+          </div>
+        </div>
+      </div>
     </section>
     <section
-      id="services"
+      id="timeline"
       class="s-services"
       data-parallax="scroll"
       data-image-src=""
@@ -301,7 +435,7 @@
         </div>
         <img
           class="line_bar"
-          style="width: fit-content; height: 20px"
+          style="height: 20px"
           src="images/line1.png"
           alt=""
         />
@@ -312,35 +446,32 @@
             <div id="content">
               <ul class="timeline-1 text-black">
                 <li class="event" data-date="">
-                  <h4 class="mb-3 ">Mở cổng đăng ký</h4>
+                  <h4 class="mb-3">THỜI GIAN ĐĂNG KÝ</h4>
                   <p class="about-content3">
-                    Từ ngày 15/8/2023 đến ngày 1/10/2023 sẽ mở cổng nhận thông
-                    tin đăng ký từ các thí sinh.
+                    Đóng cổng đăng ký 16h ngày 16/10/2023
                   </p>
                 </li>
                 <li class="event" data-date="">
-                  <h4 class="mb-3 ">Vòng 1</h4>
+                  <h4 class="mb-3">Vòng 1</h4>
                   <p class="about-content3">
-                    Từ ngày 02/10/2023 đến ngày 08/12/2023: Thí sinh được cung
-                    cấp tài khoản tự học trên nền tảng Global Platform trong 10
-                    tuần về lập trình: Java, RDBMS, Git, Linux, AWS… Thí sinh
-                    vượt qua 4/4 bài kiểm tra sẽ được vào vòng 2.
+                    Bắt đầu ngày 09/10/2023: Thí sinh được cung cấp tài khoản tự
+                    học trên nền tảng Global Platform trong 10 tuần về lập
+                    trình: Java, Spring Boot, SQL, Linux.
                   </p>
                 </li>
                 <li class="event" data-date="">
-                  <h4 class="mb-3 ">Vòng 2</h4>
+                  <h4 class="mb-3">Vòng 2</h4>
                   <p class="about-content3">
-                    Từ ngày 11/12/2023 đến ngày 22/12/2023 thí sinh sẽ được đào
-                    tạo chuyên sâu, tham gia làm Project với Giảng viên. Kết quả
-                    sẽ được Giảng viên hướng dẫn đánh giá ngay sau khi kết thúc
-                    khóa.
+                    Bắt đầu ngày 25/12/2023: Thí sinh sẽ được đào tạo chuyên
+                    sâu, tham gia làm Project với Giảng viên. Kết quả sẽ được
+                    Giảng viên hướng dẫn đánh giá ngay sau khi kết thúc khóa.
                   </p>
                 </li>
                 <li class="event" data-date="">
-                  <h4 class="mb-3 ">Vòng 3</h4>
+                  <h4 class="mb-3">Vòng 3</h4>
                   <p class="about-content3">
-                    Từ ngày 30/12/2023 đến ngày 31/12/2023, thí sinh sẽ tham gia
-                    Bootcamp 2 ngày 1 đêm. <br />
+                    Diễn ra trong vòng 2 ngày 09/1 và 10/1/2024: Thí sinh sẽ
+                    tham gia Bootcamp 2 ngày 1 đêm. <br />
                     Project thí sinh đạt điểm từ tiêu chuẩn trở lên sẽ được tham
                     gia phỏng vấn với Công ty Công nghệ<br />
 
@@ -354,24 +485,21 @@
         </div>
       </div>
 
-      <div class="col-full"><h4 class="display-3">Phí Tham Dự</h4></div>
+      <div class="col-full">
+        <h4 class="display-3">Phí Tham Dự <br /></h4>
+      </div>
       <div class="register-bar">
-        <img class="register-bar" src="/images/register-bar.png" alt="">
-        <p style="font-weight: 700 !important; font-size: 21px; position: absolute;">
-          200.000 VND<span
-            style="
-              font-family: 'SVN-Gilroy';
-              font-weight: 500;
-              font-size: 26px;
-              line-height: 24.15px;
-              text-align: center;
-            "
-            >/ thí sinh.</span
-          >
+        <img class="register-bar" src="/images/register-bar.png" alt="" />
+        <p class="registration-fee">
+          200.000 VND<span class="participant-type">/ Thí sinh</span>
         </p>
       </div>
+      <p class="display-3-below">
+        Lưu ý: BTC không hỗ trợ hoàn lại phí tham dự
+      </p>
     </section>
-    <section id="works" class="s-works">
+
+    <section id="awards" class="s-works">
       <div class="intro-wrap">
         <div class="section-header has-bottom-sep light-sep" data-aos="fade-up">
           <div class="col-full">
@@ -380,7 +508,7 @@
           </div>
           <img
             class="line_bar"
-            style="width: fit-content; height: 20px"
+            style="height: 20px"
             src="images/line1.png"
             alt=""
           />
@@ -390,9 +518,11 @@
         <div class="award-row1">
           <div class="col-6 custom-height">
             <div class="award-layout1">
+              <div style="width: fit-content">
                 <img class="img-award1" src="images/award.png" alt="#" />
-                   
-              <p class="text-award">
+              </div>
+
+              <p class="text-award1">
                 Làm việc tại các Công ty Công nghệ quốc tế với mức lương từ
                 20.000.000 VND/ tháng
               </p>
@@ -401,7 +531,10 @@
 
           <div class="col-6 custom-height">
             <div class="award-layout">
-              <img class="img-award2" src="images/award2.png" alt="#" />
+              <div style="width: fit-content">
+                <img class="img-award2" src="images/award2.png" alt="#" />
+              </div>
+
               <p class="text-award">
                 Được đào tạo các kỹ năng và kiến thức liên quan Java Spring
                 Framework, RDBMS, Git, Linux, AWS
@@ -412,7 +545,9 @@
         <div class="award-row2">
           <div class="col-6 custom-height">
             <div class="award-layout">
-              <img class="img-award3" src="images/award3.png" alt="#" />
+              <div style="width: fit-content">
+                <img class="img-award3" src="images/award3.png" alt="#" />
+              </div>
               <p class="text-award">
                 Cấp chứng nhận hoàn thành khóa học lập trình từ Trường Công nghệ
                 ATCollabo
@@ -421,7 +556,9 @@
           </div>
           <div class="col-6 custom-height">
             <div class="award-layout">
-              <img class="img-award4" src="images/award4.png" alt="#" />
+              <div style="width: fit-content">
+                <img class="img-award4" src="images/award4.png" alt="#" />
+              </div>
               <p class="text-award">
                 Gặp gỡ và kết nối với các chuyên gia lập trình Backend trong
                 nước và thế giới
@@ -431,14 +568,15 @@
         </div>
       </div>
     </section>
-    <section id="clients" class="s-clients">
+
+    <section id="news" class="s-clients">
       <div class="section-header" data-aos="fade-up">
         <div class="col-full">
           <h3 class="subhead">News</h3>
           <h1 class="display-2">Tin tức</h1>
           <img
             class="line_bar"
-            style="width: fit-content; height: 20px"
+            style="height: 20px"
             src="images/line1.png"
             alt=""
           />
@@ -453,242 +591,92 @@
       </div>
     </section>
 
-    <section
-    id="contact"
-    class="s-contact"
-    data-parallax="scroll"
-    data-image-src="images/about-us.png"
-    background-position:
-    center
-    center
-  >
-    <div class="section-header" data-aos="fade-up">
-      <div class="col-full">
-        <h3 class="subhead">Register</h3>
-        <h1 class="display-2 display-2--light">Đăng ký</h1>
-        <img
-          class="line_bar"
-          style="width: fit-content; height: 20px"
-          src="images/line1.png"
-          alt=""
-        />
+    <section id="registerform" class="s-contact" data-parallax="scroll">
+      <div class="section-header" data-aos="fade-up">
+        <div class="col-full">
+          <h3 class="subhead">Register</h3>
+          <h1 class="display-2 display-2--light">Đăng ký</h1>
+          <img
+            class="line_bar"
+            style="height: 20px"
+            src="images/line1.png"
+            alt=""
+          />
+        </div>
       </div>
-    </div>
-    <div class="row contact-content" data-aos="fade-up">
-      <div class="contact-primary">
-        <form
-          name="contactForm"
-          id="contactForm"
-          method="post"
-          action="index.html"
-        >
-          <fieldset>
-            <div class="form-field">
-              <p>Họ tên</p>
-              <input
-                name="contactName"
-                type="text"
-                id="contactName"
-                placeholder="Your Name"
-                minlength="2"
-                required
-                aria-required="true"
-                class="full-width"
-                pattern="[A-Za-zÀ-ÿ\s\p{L}]+"
-                title="Please enter a valid name (letters and spaces only)"
-              />
-            </div>
-            <div class="form-field">
-              <p>Email</p>
-              <input
-                name="contactEmail"
-                type="email"
-                id="contactEmail"
-                placeholder="Your Email"
-                required
-                aria-required="true"
-                class="full-width"
-              />
-            </div>
-            <div class="form-field">
-              <p>Số điện thoại</p>
-              <input
-                name="contactPhone"
-                type="tel"
-                id="contactPhone"
-                placeholder="Your Phone Number"
-                minlength="10"
-                value=""
-                required
-                aria-required="true"
-                class="full-width"
-                pattern="[0-9]+(\s?[0-9]+)*"
-                title="Please enter a valid phone number"
-              />
-            </div>
-            <div class="form-field">
-              <p>Nghề nghiệp</p>
-              <input
-                name="contactSubject"
-                type="text"
-                id="contactSubject"
-                placeholder="Subject"
-                required
-                aria-required="true"
-                class="full-width"
-              />
-            </div>
-            <div class="form-field">
-              <p>Tuổi</p>
-              <input
-                name="contactAge"
-                type="number"
-                id="contactAge"
-                placeholder="Your Age"
-                required
-                aria-required="true"
-                class="full-width"
-                min="1"
-              />
-            </div>
-            <div class="form-field">
-              <button type="submit" class="full-width btn--primary">
-                <p  style="margin-bottom: unset !important;" >Đăng ký</p>
-              </button>
-              <div class="popup" id="popup">
-                <img src="./images/tick.png" />
-                <h2>Thank You!</h2>
-                <p>Your details have been successfully submitted. Thanks!</p>
-                <button type="button" id="closePopup">OK</button>
-              </div>
-            </div>
-          </fieldset>
-        </form>
 
-        <div class="message-warning">
-          Something went wrong. Please try again.
+      <div class="row contact-content" data-aos="fade-up">
+        <div class="contact-primary">
+          <!-- <iframe
+          class="iframe-form"
+          frameborder="0"
+          style="height: 90rem; width: 99%; border: none"
+          src="https://forms.zohopublic.com/atcollabo/form/nngk/formperma/OwWyzovuu92ZsLqH65IKXTHOZbNaSzuTpihLowFT3Uo"
+        ></iframe> -->
         </div>
-        <div class="message-success">
-          Your message was sent, thank you!<br />
-        </div>
-      </div>
-      <div class="contact-secondary">
-        <div class="contact-info">
-          <a class="site-logo" href="index.html">
-            <img
-              class="logo-contact-secondary"
-              style="width: 120px; padding-bottom: 1rem"
-              src="images/logo-footer copy.png"
-              alt=""
-          /></a>
-          <div class="cinfo">
-            <p>
-            
-            <p>Website Ban tổ chức</p>
-              ATCOLLABO I CODE.PRESSO<br />
-              Fanpage: ATCOLLABO<br />
-              Hotline: 036 - 233 - 7288 <br />Email: info@atcollabo.com
-            </p>
-          </div>
-          <ul class="contact-social">
-            <li>
-              <a
-                href="https://www.facebook.com/ATCollabotechnologyschool"
-                target="_blank"
-                ><i class="fa fa-facebook" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/company/98254227/admin/feed/posts/"
-                target="_blank"
-                ><i class="fa fa-linkedin" aria-hidden="true"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/@ATCollaboTechnologySchool"
-                target="_blank"
-                ><i class="fa fa-youtube" aria-hidden="true"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-      <div class="pswp__bg"></div>
-      <div class="pswp__scroll-wrap">
-        <div class="pswp__container">
-          <div class="pswp__item"></div>
-          <div class="pswp__item"></div>
-          <div class="pswp__item"></div>
-        </div>
-        <div class="pswp__ui pswp__ui--hidden">
-          <div class="pswp__top-bar">
-            <div class="pswp__counter"></div>
-            <button
-              class="pswp__button pswp__button--close"
-              title="Close (Esc)"
-            ></button>
-            <button
-              class="pswp__button pswp__button--share"
-              title="Share"
-            ></button>
-            <button
-              class="pswp__button pswp__button--fs"
-              title="Toggle fullscreen"
-            ></button>
-            <button
-              class="pswp__button pswp__button--zoom"
-              title="Zoom in/out"
-            ></button>
-            <div class="pswp__preloader">
-              <div class="pswp__preloader__icn">
-                <div class="pswp__preloader__cut">
-                  <div class="pswp__preloader__donut"></div>
-                </div>
-              </div>
+       
+        <div class="contact-secondary">
+          <div class="contact-info">
+            <a class="site-logo" href="index.html">
+              <img
+                class="logo-contact-secondary"
+                style="width: 120px; padding-bottom: 1rem"
+                src="images/logo-footer copy.png"
+                alt=""
+            /></a>
+            <div class="cinfo">
+              <p class="cinfo-text">
+                Website Ban tổ chức <br />
+                <a href="https://atcollabo.com/">ATCOLLABO</a> I
+                <a href="https://codepresso.io/">CODE.PRESSO</a> <br />
+                Hotline: 028 - 7302 - 2272 <br />Email:
+                recruitment@atcollabo.com
+              </p>
             </div>
-          </div>
-          <div
-            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
-          >
-            <div class="pswp__share-tooltip"></div>
-          </div>
-          <button
-            class="pswp__button pswp__button--arrow--left"
-            title="Previous (arrow left)"
-          ></button>
-          <button
-            class="pswp__button pswp__button--arrow--right"
-            title="Next (arrow right)"
-          ></button>
-          <div class="pswp__caption">
-            <div class="pswp__caption__center"></div>
+
+            <ul class="contact-social">
+              <li>
+                <a
+                  href="https://www.facebook.com/ATCollaboAcademy"
+                  target="_blank"
+                  ><i class="fa fa-facebook" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/atcollabo"
+                  target="_blank"
+                  ><i class="fa fa-linkedin" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@ATCollaboAcademy"
+                  target="_blank"
+                  ><i class="fa fa-youtube" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-    <div id="preloader">
-      <div id="loader">
-        <div class="line-scale-pulse-out">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    </div>
+    </section>
+    <!-- Back to top button -->
+    <button
+      type="button"
+      class="btn btn-danger btn-floating btn-lg"
+      id="btn-back-to-top"
+    >
+      <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+    </button>
+
     <!-- <script data-cfasync="false"
         src="https://preview.colorlib.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/countdown.js"></script>
+    <!-- <script src="js/countdown.js"></script> -->
+    <script src="js/scroll-to-top.js"></script>
 
     <!-- <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854"
@@ -720,24 +708,79 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script> -->
 
-    <!-- <script>
-        fetch('http://localhost:8080/api/stats')
-            .then(response => response.json())
-            .then(data => {
-                const registerElement = document.getElementById('register');
-                const onlineElement = document.getElementById('online');
-                const offlineElement = document.getElementById('offline');
-                const hackathonElement = document.getElementById('hackathon');
-    
-                registerElement.textContent = data.registerCount;
-                onlineElement.textContent = data.onlinePassCount;
-                offlineElement.textContent = data.offlinePassCount;
-                hackathonElement.textContent = data.hackerthonCount;
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    </script> -->
+    <script>
+      fetch(API_DOMAIN + "/api/stats", {
+        method: "GET",
+        headers: {
+          "ngrok-skip-browser-warning": "69420",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const registerElement = document.getElementById("register");
+          const onlineElement = document.getElementById("online");
+          const offlineElement = document.getElementById("offline");
+          const hackathonElement = document.getElementById("hackathon");
+
+          registerElement.textContent = data.registerCount;
+          onlineElement.textContent = data.onlinePassCount;
+          offlineElement.textContent = data.offlinePassCount;
+          hackathonElement.textContent = data.hackerthonCount;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    </script>
+
+    <script>
+      // Get references to the form and pop-up elements
+      const contactForm = document.getElementById("contactForm");
+      const popup = document.getElementById("popup");
+      const reviewData = document.getElementById("reviewData");
+      const submitButton = document.getElementById("submitButton");
+      const confirmButton = document.getElementById("confirmButton");
+
+      // Add an event listener to the form's submit button
+      submitButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        // Gather and display user-entered data for review
+        const name = document.getElementById("contactName").value;
+        const email = document.getElementById("contactEmail").value;
+        const phone = document.getElementById("contactPhone").value;
+        const subject = document.getElementById("contactSubject").value;
+        const age = document.getElementById("contactAge").value;
+
+        const reviewHtml = `
+            <p><strong>Họ tên:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Số điện thoại:</strong> ${phone}</p>
+            <p><strong>Nghề nghiệp:</strong> ${subject}</p>
+            <p><strong>Tuổi:</strong> ${age}</p>
+          `;
+
+        reviewData.innerHTML = reviewHtml;
+
+        // Show the pop-up
+        popup.style.visibility = "visible";
+        submitButton.style.visibility = "hidden";
+
+        // Show the popup
+        const confirmPopup = document.getElementById("popupQR");
+        const backToFormButton = document.getElementById("backToForm");
+        const backToReviewButton = document.getElementById("backToReview");
+
+        // Close the popup when clicking the "x" button
+        const reviewButton = document.getElementById("reviewPopup");
+
+        backToFormButton.addEventListener("click", function () {
+          popup.style.visibility = "hidden";
+          submitButton.style.visibility = "visible";
+        });
+        backToReviewButton.addEventListener("click", function () {
+          confirmPopup.style.visibility = "hidden";
+        });
+      });
+    </script>
 
     <script>
       document
@@ -762,24 +805,41 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: JSON.stringify(requestBody),
           })
-            .then((response) => response.json())
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              return response.json();
+            })
             .then((data) => {
               console.log("Data saved:", data);
 
-              // Show the popup
+              const confirmPopup = document.getElementById("popupQR");
+              const successPopup = document.getElementById("popupSuccess");
+              const submitButton = document.getElementById("submitButton");
               const popup = document.getElementById("popup");
-              popup.style.visibility = "visible";
 
-              // Close the popup when clicking the "x" button
-              const closePopupButton = document.getElementById("closePopup");
-              closePopupButton.addEventListener("click", function () {
-                popup.style.visibility = "hidden";
+              popup.style.visibility = "hidden";
+              confirmPopup.style.visibility = "visible";
+
+              confirmPopup.addEventListener("click", function () {
+                successPopup.style.visibility = "visible";
+                confirmPopup.style.visibility = "hidden";
                 document.getElementById("contactForm").reset();
+              });
+
+              const popupSuccessButton =
+                document.getElementById("successPopup");
+              popupSuccessButton.addEventListener("click", function () {
+                successPopup.style.visibility = "hidden";
+                submitButton.style.visibility = "visible";
               });
             })
             .catch((error) => {
               console.error(error);
-              // Handle error, show an error message, etc.
+              alert(
+                "An error occurred while saving your data. Please try again."
+              );
             });
         });
     </script>
@@ -790,9 +850,6 @@ document.addEventListener("DOMContentLoaded", function () {
       function loadJS(FILE_URL, async = false) {
         let scriptEle = document.createElement("script");
 
-        // scriptEle.setAttribute("src", FILE_URL);
-        // scriptEle.setAttribute("type", "text/javascript");
-        // scriptEle.setAttribute("async", '');
         scriptEle.src = FILE_URL;
         scriptEle.async = false;
 
@@ -810,70 +867,155 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Fetch news data from the API
       console.log(API_DOMAIN + "/api/news");
-
       fetch(API_DOMAIN + "/api/news", {
+  method: "GET",
+  headers: {
+    "ngrok-skip-browser-warning": "69420",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    // sort b>a
+    data.sort((a, b) => b.id - a.id);
+
+    const clientsContainer = document.querySelector(".clients");
+
+    // Loop through the sorted news data and create image links
+    const loadAllImagesPromise = data.map((news) => {
+      const imageUrl = API_DOMAIN + `/api/image?fileName=${news.imageSrc}`;
+
+      return fetch(imageUrl, {
         method: "GET",
         headers: {
           "ngrok-skip-browser-warning": "69420",
         },
+        mode: "cors", // Set the mode to 'cors' to avoid CORB
       })
-        .then((response) => response.json())
-        .then((data) => {
-          const clientsContainer = document.querySelector(".clients");
+        .then((imageResponse) => imageResponse.blob())
+        .then((blobData) => {
+          // Convert the blob to an object URL
+          const imgObjectUrl = URL.createObjectURL(blobData);
 
-          // Loop through the news data and create image links
+          // Create the template string with dynamic values
+          const template = `
+            <a href="noti.html?id=${news.id}" title="" class="clients__slide">
+              <img src="${imgObjectUrl}" style="width:100%; height:auto; margin-bottom:1.5rem;"/> 
+              <h5 style="font-family: 'SVN-Gilroy', sans-serif; font-size: 26px; font-weight: 700; line-height: 31px; letter-spacing: 0em; text-align: left; color:#205D86;"> ${news.title} </h5>
+            </a>
+          `;
 
-          const loadAllImagesPromise = data.map((news) => {
-            const imageUrl =
-              API_DOMAIN + `/api/image?fileName=${news.imageSrc}`;
+          // Convert the template string to a DOM element
+          const templateElement = document
+            .createRange()
+            .createContextualFragment(template);
 
-            return fetch(imageUrl, {
-              method: "GET",
-              headers: {
-                "ngrok-skip-browser-warning": "69420",
-              },
-              mode: "cors", // Set the mode to 'cors' to avoid CORB
-            })
-              .then((imageResponse) => imageResponse.blob())
-              .then((blobData) => {
-                // Convert the blob to an object URL
-                const imgObjectUrl = URL.createObjectURL(blobData);
-
-                // Create the template string with dynamic values
-                const template = `
-                
-                  <a href="noti.html?id=${news.id}" title="" class="clients__slide">
-                  <img src="${imgObjectUrl}" style="width:100%; height:auto; margin-bottom:1.5rem;"/> 
-                  <h5  style="font-family: SVN-Gilroy; font-size: 22px; font-weight: 700; line-height: 32px; letter-spacing: 0em; text-align: left; color:#205D86;"> ${news.title}  </h5>
-              </a>
-              
-             
-              `;
-
-                // Convert the template string to a DOM element
-                const templateElement = document
-                  .createRange()
-                  .createContextualFragment(template);
-
-                // Append the template element to the clients container
-                clientsContainer.appendChild(templateElement);
-              });
-          });
-
-          Promise.all(loadAllImagesPromise)
-            .then(() => {
-              loadJS("js/slider.js", false);
-            })
-            .catch((imageError) => {
-              console.error("Error fetching image:", imageError);
-            });
-
-          console.log("Fetch completed");
-        })
-        .catch((error) => {
-          console.error("Error fetching news:", error);
+          // Append the template element to the clients container
+          clientsContainer.appendChild(templateElement);
         });
-    </script>
+    });
+
+    // Wait for all images to load
+    Promise.all(loadAllImagesPromise)
+      .then(() => {
+        loadJS("js/slider.js", false);
+      })
+      .catch((imageError) => {
+        console.error("Error fetching image:", imageError);
+      });
+
+    console.log("Fetch completed");
+  })
+  .catch((error) => {
+    console.error("Error fetching news:", error);
+  });
+</script>
+
+
+    <!-- validate number input -->
+    <!-- <script>
+    document.getElementById('button-container').addEventListener('click', function() {
+    alert('Cảm ơn bạn đã quan tâm về chương trình. Hiện tại đã hết hạn đăng ký');
+});
+   </script> -->
+
     <!-- <a href="index.html#0" title="" class="clients__slide"><img src="images/noti-1.png" /></a> -->
+
+    <script>
+      function openSearchPopup() {
+        var popup = document.getElementById("searchPopup");
+        popup.style.display = "block";
+      }
+
+      function closeSearchPopup() {
+        var popup = document.getElementById("searchPopup");
+        popup.style.display = "none";
+      }
+
+      function searchByEmail() {
+        var emailToSearch = document.getElementById("emailInput").value;
+
+        var resultsContainer = document.getElementById("searchResults");
+        resultsContainer.innerHTML = "";
+        // Clear previous results
+
+        // Replace with actual data fetching logic (e.g., AJAX request)
+        fetch("mockdata.json")
+          .then((response) => response.json())
+          .then((data) => {
+            var foundUsers = data.filter(
+              (user) =>
+                user.email === emailToSearch 
+                // ||
+                // user.phone.toString() === emailToSearch.slice(1) ||
+                // user.phone.toString() === emailToSearch 
+                
+            );
+            if (foundUsers.length === 0) {
+              var messageParagraph = document.createElement('p');
+    messageParagraph.textContent = "Không tìm thấy thông tin của bạn. Vui lòng nhập đúng yêu cầu !";
+
+    // Gắn thẻ p vào phần tử có ID là "resultsContainer"
+    resultsContainer.appendChild(messageParagraph);
+            } else {
+              // resultsContainer.innerHTML = "<h2>Search Results:</h2>";
+              var ul = document.createElement("div");
+              foundUsers.forEach((user) => {
+                var li = document.createElement("p");
+                var userInfoString =
+                
+  "<h4>Email: " + user.email + "</h4>" +
+  "<h4>Java assessment score : " + user.score + "</h4>"+ 
+  "<h4>Java assessment result: " + user.result + "</h4>";
+li.innerHTML = userInfoString;
+                  
+                ul.appendChild(li);
+              });
+              resultsContainer.appendChild(ul);
+            }
+          })
+          .catch((error) => {
+            resultsContainer.innerHTML = "Error fetching data.";
+            console.error(error);
+          });
+      }
+    </script>
+    <script>
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1;
+        }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 3000); // Change image every 3 seconds
+      }
+    </script>
   </body>
 </html>

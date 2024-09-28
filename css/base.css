@@ -397,6 +397,7 @@
      -ms-appearance: none;
      -o-appearance: none;
      appearance: none;
+     font-size: 13px;
  }
  
  /* ===================================================================
@@ -404,7 +405,7 @@
   *
   * ------------------------------------------------------------------- */
  .row {
-     width: 94%;
+     width: 94% !important;
      max-width: 1200px;
      padding-left: 100px;
      margin: 0 auto !important;
@@ -464,7 +465,7 @@
          margin-right: -15px;
      }
      [class*="col-"] {
-         padding: 0 15px;
+         padding: unset
      }
  }
  
@@ -474,10 +475,18 @@
  @media only screen and (max-width: 800px) {
      .row {
          width: 90%;
+         padding-left: unset;
+
      }
      .tab-full {
          width: 100%;
      }
+ }
+ @media only screen and (min-width: 801px) and (max-width: 1000px){
+    .row {
+        width: 90%;
+        padding-left: unset;
+    }
  }
  
  /* ------------------------------------------------------------------- 
